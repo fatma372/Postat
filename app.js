@@ -4,11 +4,12 @@ let tagsContainer = document.querySelector(".main-tags")
 
 let allPostsLink='https://dummyjson.com/posts';
 function getPosts(url){
+    postsContainer.innerHTML = " "
 fetch(url)
 .then((res) =>{  return res.json()})
 .then((data)=>{
     let posts =data.posts;
-    // console.log(posts)
+    //console.log(posts)
     posts.map((post)=>{
         let postTags = post.tags;
         postsContainer.innerHTML += `
@@ -46,18 +47,13 @@ function getCategories(){
    .then((data) => {
     data.map((tag) => {
         tagsContainer.innerHTML += `
-            <span class="main-tag" onclick="getCategoryPosts('${tag.url}')">#${tag.slug}</span>
+            <span class="main-tag" onclick="getPosts('${tag.url}')">#${tag.slug}</span>
         `;
     })
  
    })
 }
 getCategories()
-
-function getCategoryPosts(tagUrl){
-     postsContainer.innerHTML = " "
-    getPosts(tagUrl)
-}
 
 let search=document.querySelector(".search")
 search.addEventListener("keyup",()=>{
