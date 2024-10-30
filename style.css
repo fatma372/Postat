@@ -39,7 +39,7 @@ header{
     grid-area: header;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .search{
@@ -154,6 +154,9 @@ a{
 @media (max-width: 450px) {
     .main-tag{
         font-size: 10px;
+    }
+    body{
+        padding: 0% 5%;
     }
     
 }
