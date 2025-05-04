@@ -14,6 +14,7 @@ fetch(url)
         let postTags = post.tags;
         postsContainer.innerHTML += `
             <div class="post-card">
+                <h3 class="post-title">${post.title}..</h3>
                 <p class="post-content">${post.body}</p>
                 <div class="post-tags">
                 ${postTags.map((tag) => `<span class="tag">#${tag}</span>`).join(' ')}
